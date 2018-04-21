@@ -137,8 +137,6 @@ class Seq2SeqModel(object):
 
     def train(self, train_data, valid_data=None, learning_rate=0.001, batch_size=128, epochs=100, keep_prob=0.5,
               optimizer=tf.train.AdamOptimizer, save_path='', load_path='', display_size=5, save_size=5):
-        print('Prediction...')
-
         train_sources, train_targets = train_data
 
         # Convert letters to ids
@@ -208,7 +206,6 @@ class Seq2SeqModel(object):
         return train_loss_history, valid_loss_history
 
     def predict(self, sequences, load_path=''):
-        print('Trai start...')
         if load_path:
             self.load(load_path)
 
